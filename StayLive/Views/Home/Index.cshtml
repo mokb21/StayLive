@@ -1,0 +1,28 @@
+﻿@model StayLive.Models.Home.HomeVM
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Home";
+}
+@Styles.Render("~/Content/tickets-style")
+
+<div class="container-fluid">
+    @if (SessionHelper.AccountRole == 1)
+    {
+        @Html.Partial("~/Views/Home/_systemAdminDashboard.cshtml", Model)
+    }
+    else
+    {
+        @Html.Partial("~/Views/Home/_dashboard.cshtml", Model)
+    }
+</div>
+
+@Scripts.Render("~/bundles/chart-script")
+@Scripts.Render("~/bundles/home-helpers")
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            HomeHelper.IndexLoad(@StayLive.Helpers.SessionHelper.AccountRole);
+        })
+    </script>
+}

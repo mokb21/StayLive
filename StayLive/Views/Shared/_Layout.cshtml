@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/assets/images/stay-live.png">
+    <title>@ViewBag.Title | Stay Live</title>
+    @Styles.Render("~/Content/main-style")
+    @Styles.Render("~/Content/second-style")
+    @*@Styles.Render("~/Content/" + SessionHelper.Theme + "-style")*@
+    @Styles.Render("~/Content/light-style")
+    @Styles.Render("~/Content/custom-style")
+    <script>var dataTablesLang = "@Url.Content("~/assets/plugins/datatables/Internationalisation/"+ SessionHelper.Language+ ".json")" </script>
+    @RenderSection("styles", required: false)
+</head>
+<body class="fix-header fix-sidebar card-no-border">
+    <div class="preloader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+        </svg>
+    </div>
+    <div id="main-wrapper">
+        @Scripts.Render("~/bundles/main-script")
+        @Scripts.Render("~/bundles/second-script")
+        <!-- Start of top Header -->
+        @Html.Partial("~/Views/Shared/_TopHeader.cshtml")
+        <!-- End of top Header -->
+        <!-- Start of top Navigation Bar -->
+        @Html.Partial("~/Views/Shared/_NavigationBar.cshtml")
+        <!-- End of top Header -->
+        <!-- Page Content -->
+        @RenderSection("scripts", required: false)
+        <script>
+            @Html.Raw((string)TempData["im"])@{bool  x = TempData.Remove("im");}
+        </script>
+        <div id="page-wrapper">
+            @RenderBody()
+            @Html.Partial("~/Views/Shared/_Footer.cshtml")
+        </div>
+    </div>
+
+    <div id="staylive-responsive-modal" class="modal" tabindex="-1" role="dialog" area-labelledby="myModalLabel" aria-hidden="true"></div>
+</body>
+</html>

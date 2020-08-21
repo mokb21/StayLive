@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a975f9c63e4e463d806ee816738c8535" Name="Diagram1">
+        <EntityTypeShape EntityType="StayLiveModel.Company" Width="1.5" PointX="2.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="StayLiveModel.Level" Width="1.5" PointX="5" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="StayLiveModel.Region" Width="1.5" PointX="0.5" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="StayLiveModel.Ticket" Width="1.5" PointX="8.5" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="StayLiveModel.TicketReply" Width="1.5" PointX="6.5" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="StayLiveModel.User" Width="1.5" PointX="4.625" PointY="6.625" IsExpanded="true" />
+        <AssociationConnector Association="StayLiveModel.FK_Company_Region" ManuallyRouted="false" />
+        <AssociationConnector Association="StayLiveModel.FK_Level_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="StayLiveModel.FK_Tikcet_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="StayLiveModel.FK_User_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="StayLiveModel.FK_TicketReply_TicketId" ManuallyRouted="false" />
+        <AssociationConnector Association="StayLiveModel.FK_Tikcet_AssignedUser" ManuallyRouted="false" />
+        <AssociationConnector Association="StayLiveModel.FK_Tikcet_CreateByUser" ManuallyRouted="false" />
+        <AssociationConnector Association="StayLiveModel.FK_TicketReply_CreateByUser" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

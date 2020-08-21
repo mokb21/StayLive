@@ -1,0 +1,46 @@
+﻿@model StayLive.areas.Tickets.Models.Ticket.TicketsTableVM
+@{
+    ViewBag.Title = "Tickets";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Styles.Render("~/Content/tickets-style")
+@Scripts.Render("~/bundles/tickets-helpers")
+
+<div class="container-fluid">
+    <div class="row page-titles">
+        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+            @Html.Breadcrumb(new string[] { "Tickets" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table id="TicketsTbl" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>@StayLive.Resources.Tickets.Subject</th>
+                                    <th>@StayLive.Resources.Tickets.ClientName</th>
+                                    <th>@StayLive.Resources.Tickets.CreateDate</th>
+                                    <th>@StayLive.Resources.General.Level</th>
+                                    <th>@StayLive.Resources.Tickets.Status</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@Html.Partial("~/areas/Tickets/Views/Ticket/_ticketsFilter.cshtml", Model)
+
+@section scripts{
+    <script>
+        $(document).ready(function () { TicketsHelper.IndexLoad(); })
+    </script>
+}

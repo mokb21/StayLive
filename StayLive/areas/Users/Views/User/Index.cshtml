@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = StayLive.Resources.General.Users;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Scripts.Render("~/bundles/users-helpers")
+
+@Html.Hidden("hfCurrentAccount", SessionHelper.AccountId)
+@Html.Hidden("hfCurrentRole", SessionHelper.AccountRole)
+<div class="container-fluid">
+    <div class="row page-titles">
+        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+            @Html.Breadcrumb(new string[] { StayLive.Resources.General.Users })
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row panel-helper">
+                        <div class="col-md-12">
+                            <a href="@Url.Action("UserProfile", "User", new { @area = "Users" })" class="btn btn-success btn-rounded waves-effect waves-light pull-right"><i class="mdi mdi-plus"></i> @StayLive.Resources.General.Add</a>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="UsersTbl" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>@StayLive.Resources.General.Photo</th>
+                                    <th>@StayLive.Resources.General.Name</th>
+                                    <th>@StayLive.Resources.General.Email</th>
+                                    <th>@StayLive.Resources.Users.Mobile</th>
+                                    <th>@StayLive.Resources.Users.Role</th>
+                                    <th>@StayLive.Resources.General.Company</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        $(document).ready(function () { UsersHelper.IndexLoad(); })
+    </script>
+}

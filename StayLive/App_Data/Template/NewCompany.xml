@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EmailJMS>
+  <Subject>
+    Stay Live
+  </Subject>
+  <HtmlMessageContent>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+      <head>
+        <title></title>
+      </head>
+      <body style="background-color: #e5e5e5; font-family:Arial, Helvetica, sans-serif">
+        <!-- Top Plcaeholder -->
+        <div style="margin-left: 100px; margin-bottom: 5px; font-size: 15px; font-weight: bolder;font-family:'Comic Sans MS', cursive, sans-serif">
+          Hi,<br/>
+          This is an email from Stay live Support Ticketing System.<br/>
+        </div>
+        <table style="width: 600px; background-color: #fff; margin-left: 100px;" cellpadding="0">
+          <tr style="background-color: #BAAF11; height: 20px;">
+            <td></td>
+          </tr>
+          <tr style="font-size: 40px; font-family: sans-serif; font-weight: bolder; color: #7f7f7f;">
+            <td style="padding-left:30%">Stay Live</td>
+          </tr>
+          <tr style="height: 100px; background-color: #f2f2f2;">
+            <!-- Message -->
+            <td style="border-top: 1px solid #d6d6d6; border-bottom: 1px solid #d6d6d6; padding-left: 10px;">
+              <p style="color:#500050">
+                 Welcome {Company} to Stay Live Support Ticketing.<br /><br />
+					Our team will contact with you and inform you the data you need to start enjoying our system.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div>
+                <table cellpadding="0" cellspacing="0" style="background-color: #fff;">
+                  <tr>
+                    <td>
+                      <img src="file:///E:/Applied%20Project/EmailTemplate/stay-live.png" width="125" height="130" />
+                    </td>
+                    <td>
+                      <img src="file:///E:/Applied%20Project/EmailTemplate/vertical.jpg" width="18" height="157" />
+                    </td>
+                    <td style="width: 300px; height: 65px; background-color: #fff;">
+                      <table>
+                        <tr>
+                          <td style="vertical-align: top;">
+                            <p style="text-align: justify; font-size: 6pt; font-family: Arial,sans-serif; color: #666666;">
+                              Disclaimer:
+                              This e-mail contains information intended only for the use of the
+                              individual or entity named above. If the reader of this e-mail is not
+                              the intended recipient or the employee or agent responsible for
+                              delivering it to the intended recipient, any dissemination, publication
+                              or copying of this e-mail is strictly prohibited. The sender does not
+                              accept any responsibility for any loss, disruption or damage to your
+                              data or computer system that may occur while using data contained in,
+                              or transmitted with, this e-mail. If you have received this e-mail in
+                              error, please immediately notify us by return e-mail.
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td style="padding: 20px 0 20px 0; background-color: #fff;">
+                            <a href="#">
+                              <span>
+                                <img src="https://resources.fms-tech.com:444/Resources/Images/in.jpg" width="20" height="20" />
+                              </span>
+                            </a>
+                            <a href="#" style="margin-left: -5px;">
+                              <span>
+                                <img src="https://resources.fms-tech.com:444/Resources/Images/tw.jpg" width="20" height="20" />
+                              </span>
+                            </a>
+                            <a href="#" style="margin-left: -5px;">
+                              <span>
+                                <img src="https://resources.fms-tech.com:444/Resources/Images/fb.jpg" width="20" height="20" />
+                              </span>
+                            </a>
+                            <a href="#" style="margin-left: -5px;">
+                              <span>
+                                <img src="https://resources.fms-tech.com:444/Resources/Images/yt.jpg" width="20" height="20" />
+                              </span>
+                            </a>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </td>
+          </tr>
+          <tr style="height: 30px; background-color: #1761A0;">
+            <td style="color: #fff; font-size: 13px; padding-top: 4px; padding-right: 4px; text-align: right;">
+              <p>
+                Powered by Stay Live
+              </p>
+            </td>
+          </tr>
+        </table>
+        <!-- Bottom Plcaeholder -->
+        <div style="margin-left: 100px; font-size: 15px; font-weight: bolder;"></div>
+      </body>
+    </html>
+  </HtmlMessageContent>
+</EmailJMS>

@@ -1,0 +1,120 @@
+﻿Installing assembly 'E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.InstallLog
+   assemblypath = E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.exe
+Installing service StayLiveEmails...
+Creating EventLog source StayLiveEmails in log Application...
+Rolling back assembly 'E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.InstallLog
+   assemblypath = E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.exe
+Restoring event log to previous state for source StayLiveEmails.
+Installing assembly 'E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.InstallLog
+   assemblypath = E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.exe
+Installing service StayLiveEmails...
+Creating EventLog source StayLiveEmails in log Application...
+Rolling back assembly 'E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.InstallLog
+   assemblypath = E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.exe
+Restoring event log to previous state for source StayLiveEmails.
+Uninstalling assembly 'E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.InstallLog
+   assemblypath = E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.exe
+Removing EventLog source StayLiveEmails.
+Warning: The source StayLiveEmails is not registered on the local machine.
+Service StayLiveEmails is being removed from the system...
+Service StayLiveEmails was successfully removed from the system.
+Uninstalling assembly 'E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.InstallLog
+   assemblypath = E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.exe
+Removing EventLog source StayLiveEmails.
+Warning: The source StayLiveEmails is not registered on the local machine.
+Service StayLiveEmails is being removed from the system...
+Service StayLiveEmails was successfully removed from the system.
+Installing assembly 'E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.InstallLog
+   assemblypath = E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.exe
+Installing service StayLiveEmails...
+Creating EventLog source StayLiveEmails in log Application...
+Rolling back assembly 'E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.InstallLog
+   assemblypath = E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.exe
+Restoring event log to previous state for source StayLiveEmails.
+Uninstalling assembly 'E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.InstallLog
+   assemblypath = E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.exe
+Removing EventLog source StayLiveEmails.
+Warning: The source StayLiveEmails is not registered on the local machine.
+Service StayLiveEmails is being removed from the system...
+Service StayLiveEmails was successfully removed from the system.
+Uninstalling assembly 'E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.InstallLog
+   assemblypath = E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.exe
+Removing EventLog source StayLiveEmails.
+Warning: The source StayLiveEmails is not registered on the local machine.
+Service StayLiveEmails is being removed from the system...
+Service StayLiveEmails was successfully removed from the system.
+Uninstalling assembly 'E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.InstallLog
+   assemblypath = E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.exe
+Removing EventLog source StayLiveEmails.
+Warning: The source StayLiveEmails is not registered on the local machine.
+Service StayLiveEmails is being removed from the system...
+An exception occurred during the uninstallation of the System.ServiceProcess.ServiceInstaller installer.
+System.ComponentModel.Win32Exception: The specified service does not exist as an installed service
+An exception occurred while uninstalling. This exception will be ignored and the uninstall will continue. However, the application might not be fully uninstalled after the uninstall is complete.
+Installing assembly 'E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.InstallLog
+   assemblypath = E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.exe
+Installing service StayLiveEmails...
+Service StayLiveEmails has been successfully installed.
+Creating EventLog source StayLiveEmails in log Application...
+Committing assembly 'E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.InstallLog
+   assemblypath = E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.exe
+Uninstalling assembly 'E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.InstallLog
+   assemblypath = E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.exe
+Removing EventLog source StayLiveEmails.
+Service StayLiveEmails is being removed from the system...
+Service StayLiveEmails was successfully removed from the system.
+Installing assembly 'E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.InstallLog
+   assemblypath = E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.exe
+Installing service StayLiveEmails...
+Service StayLiveEmails has been successfully installed.
+Creating EventLog source StayLiveEmails in log Application...
+Committing assembly 'E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.InstallLog
+   assemblypath = E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.exe

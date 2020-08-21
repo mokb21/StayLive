@@ -1,0 +1,37 @@
+﻿<aside class="left-sidebar">
+    <div class="scroll-sidebar">
+        <nav class="sidebar-nav">
+            <ul id="sidebarnav">
+                <li class="nav-small-cap">PERSONAL</li>
+                @if (SessionHelper.AccountRole == (byte)StayLive.areas.Users.Models.UserRoles.SystemAdmin)
+                {
+                    <li class="@Html.IsSelected("Companies")">
+                        <a class="has-arrow " href="@Url.Action("Index", "Company", new { @area = "Companies" })"><i class="mdi mdi-home-modern"></i><span class="hide-menu"> @StayLive.Resources.General.Companies</span></a>
+                    </li>
+                }
+                @if (SessionHelper.AccountRole == (byte)StayLive.areas.Users.Models.UserRoles.SystemAdmin
+                    || SessionHelper.AccountRole == (byte)StayLive.areas.Users.Models.UserRoles.Admin)
+                {
+                    <li class="@Html.IsSelected("Users")">
+                        <a class="has-arrow " href="@Url.Action("", "User", new { @area = "Users" })" aria-expanded="false"><i class="mdi mdi-account"></i><span class="hide-menu">@StayLive.Resources.General.Users </span></a>
+                    </li>
+                }
+                @if (SessionHelper.AccountRole == (byte)StayLive.areas.Users.Models.UserRoles.Admin)
+                {
+                    <li class="@Html.IsSelected("Levels")">
+                        <a class="has-arrow " href="@Url.Action("", "Level", new { @area = "Levels" })" aria-expanded="false"><i class="mdi mdi mdi-file-tree"></i><span class="hide-menu">@StayLive.Resources.General.Levels </span></a>
+                    </li>
+                }
+                @if (SessionHelper.AccountRole == (byte)StayLive.areas.Users.Models.UserRoles.Admin
+                    || SessionHelper.AccountRole == (byte)StayLive.areas.Users.Models.UserRoles.Supervisor
+                    || SessionHelper.AccountRole == (byte)StayLive.areas.Users.Models.UserRoles.Agent)
+                {
+                    <li class="@Html.IsSelected("Tickets")">
+                        <a class="has-arrow " href="@Url.Action("", "Ticket", new { @area = "Tickets" })" aria-expanded="false"><i class="mdi mdi-email-variant"></i><span class="hide-menu">@StayLive.Resources.General.Tickets </span></a>
+                    </li>
+                }
+                
+            </ul>
+        </nav>
+    </div>
+</aside>

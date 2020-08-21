@@ -1,0 +1,170 @@
+C:\Applied Project\StayLive\StayLive\StayLive\bin\ApplicationInsights.config
+C:\Applied Project\StayLive\StayLive\StayLive\bin\StayLive.dll.config
+C:\Applied Project\StayLive\StayLive\StayLive\bin\StayLive.dll
+C:\Applied Project\StayLive\StayLive\StayLive\bin\StayLive.pdb
+C:\Applied Project\StayLive\StayLive\StayLive\bin\Antlr3.Runtime.dll
+C:\Applied Project\StayLive\StayLive\StayLive\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Applied Project\StayLive\StayLive\StayLive\bin\Microsoft.AI.DependencyCollector.dll
+C:\Applied Project\StayLive\StayLive\StayLive\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Applied Project\StayLive\StayLive\StayLive\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Applied Project\StayLive\StayLive\StayLive\bin\Microsoft.AI.Web.dll
+C:\Applied Project\StayLive\StayLive\StayLive\bin\Microsoft.AI.WindowsServer.dll
+C:\Applied Project\StayLive\StayLive\StayLive\bin\Microsoft.ApplicationInsights.dll
+C:\Applied Project\StayLive\StayLive\StayLive\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Applied Project\StayLive\StayLive\StayLive\bin\Microsoft.Web.Infrastructure.dll
+C:\Applied Project\StayLive\StayLive\StayLive\bin\Newtonsoft.Json.dll
+C:\Applied Project\StayLive\StayLive\StayLive\bin\System.Linq.Dynamic.dll
+C:\Applied Project\StayLive\StayLive\StayLive\bin\System.Web.Helpers.dll
+C:\Applied Project\StayLive\StayLive\StayLive\bin\System.Web.Mvc.dll
+C:\Applied Project\StayLive\StayLive\StayLive\bin\System.Web.Optimization.dll
+C:\Applied Project\StayLive\StayLive\StayLive\bin\System.Web.Razor.dll
+C:\Applied Project\StayLive\StayLive\StayLive\bin\System.Web.WebPages.Deployment.dll
+C:\Applied Project\StayLive\StayLive\StayLive\bin\System.Web.WebPages.dll
+C:\Applied Project\StayLive\StayLive\StayLive\bin\System.Web.WebPages.Razor.dll
+C:\Applied Project\StayLive\StayLive\StayLive\bin\WebGrease.dll
+C:\Applied Project\StayLive\StayLive\StayLive\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Applied Project\StayLive\StayLive\StayLive\bin\System.Web.Helpers.xml
+C:\Applied Project\StayLive\StayLive\StayLive\bin\System.Web.Mvc.xml
+C:\Applied Project\StayLive\StayLive\StayLive\bin\System.Web.Optimization.xml
+C:\Applied Project\StayLive\StayLive\StayLive\bin\System.Web.Razor.xml
+C:\Applied Project\StayLive\StayLive\StayLive\bin\System.Web.WebPages.xml
+C:\Applied Project\StayLive\StayLive\StayLive\bin\System.Web.WebPages.Deployment.xml
+C:\Applied Project\StayLive\StayLive\StayLive\bin\System.Web.WebPages.Razor.xml
+C:\Applied Project\StayLive\StayLive\StayLive\bin\Antlr3.Runtime.pdb
+C:\Applied Project\StayLive\StayLive\StayLive\bin\Newtonsoft.Json.xml
+C:\Applied Project\StayLive\StayLive\StayLive\bin\Microsoft.ApplicationInsights.xml
+C:\Applied Project\StayLive\StayLive\StayLive\bin\Microsoft.AI.DependencyCollector.xml
+C:\Applied Project\StayLive\StayLive\StayLive\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Applied Project\StayLive\StayLive\StayLive\bin\Microsoft.AI.WindowsServer.xml
+C:\Applied Project\StayLive\StayLive\StayLive\bin\Microsoft.AI.Web.xml
+C:\Applied Project\StayLive\StayLive\StayLive\obj\Debug\StayLive.Resources.Companies.resources
+C:\Applied Project\StayLive\StayLive\StayLive\obj\Debug\StayLive.Resources.General.resources
+C:\Applied Project\StayLive\StayLive\StayLive\obj\Debug\StayLive.Resources.Levels.resources
+C:\Applied Project\StayLive\StayLive\StayLive\obj\Debug\StayLive.Resources.Tickets.resources
+C:\Applied Project\StayLive\StayLive\StayLive\obj\Debug\StayLive.Resources.Users.resources
+C:\Applied Project\StayLive\StayLive\StayLive\obj\Debug\StayLive.Resources.Validations.resources
+C:\Applied Project\StayLive\StayLive\StayLive\obj\Debug\StayLive.csproj.GenerateResource.Cache
+C:\Applied Project\StayLive\StayLive\StayLive\obj\Debug\StayLive.csproj.CoreCompileInputs.cache
+C:\Applied Project\StayLive\StayLive\StayLive\obj\Debug\StayLive.dll
+C:\Applied Project\StayLive\StayLive\StayLive\obj\Debug\StayLive.pdb
+E:\Applied Project\StayLive\StayLive\StayLive\bin\ApplicationInsights.config
+E:\Applied Project\StayLive\StayLive\StayLive\bin\StayLive.dll.config
+E:\Applied Project\StayLive\StayLive\StayLive\bin\StayLive.dll
+E:\Applied Project\StayLive\StayLive\StayLive\bin\StayLive.pdb
+E:\Applied Project\StayLive\StayLive\StayLive\bin\Antlr3.Runtime.dll
+E:\Applied Project\StayLive\StayLive\StayLive\bin\EntityFramework.dll
+E:\Applied Project\StayLive\StayLive\StayLive\bin\EntityFramework.SqlServer.dll
+E:\Applied Project\StayLive\StayLive\StayLive\bin\Microsoft.AI.Agent.Intercept.dll
+E:\Applied Project\StayLive\StayLive\StayLive\bin\Microsoft.AI.DependencyCollector.dll
+E:\Applied Project\StayLive\StayLive\StayLive\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\Applied Project\StayLive\StayLive\StayLive\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\Applied Project\StayLive\StayLive\StayLive\bin\Microsoft.AI.Web.dll
+E:\Applied Project\StayLive\StayLive\StayLive\bin\Microsoft.AI.WindowsServer.dll
+E:\Applied Project\StayLive\StayLive\StayLive\bin\Microsoft.ApplicationInsights.dll
+E:\Applied Project\StayLive\StayLive\StayLive\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Applied Project\StayLive\StayLive\StayLive\bin\Microsoft.Web.Infrastructure.dll
+E:\Applied Project\StayLive\StayLive\StayLive\bin\Newtonsoft.Json.dll
+E:\Applied Project\StayLive\StayLive\StayLive\bin\System.Linq.Dynamic.dll
+E:\Applied Project\StayLive\StayLive\StayLive\bin\System.Net.Http.Formatting.dll
+E:\Applied Project\StayLive\StayLive\StayLive\bin\System.Web.Helpers.dll
+E:\Applied Project\StayLive\StayLive\StayLive\bin\System.Web.Http.dll
+E:\Applied Project\StayLive\StayLive\StayLive\bin\System.Web.Http.WebHost.dll
+E:\Applied Project\StayLive\StayLive\StayLive\bin\System.Web.Mvc.dll
+E:\Applied Project\StayLive\StayLive\StayLive\bin\System.Web.Optimization.dll
+E:\Applied Project\StayLive\StayLive\StayLive\bin\System.Web.Razor.dll
+E:\Applied Project\StayLive\StayLive\StayLive\bin\System.Web.WebPages.Deployment.dll
+E:\Applied Project\StayLive\StayLive\StayLive\bin\System.Web.WebPages.dll
+E:\Applied Project\StayLive\StayLive\StayLive\bin\System.Web.WebPages.Razor.dll
+E:\Applied Project\StayLive\StayLive\StayLive\bin\WebGrease.dll
+E:\Applied Project\StayLive\StayLive\StayLive\bin\EntityFramework.xml
+E:\Applied Project\StayLive\StayLive\StayLive\bin\EntityFramework.SqlServer.xml
+E:\Applied Project\StayLive\StayLive\StayLive\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Applied Project\StayLive\StayLive\StayLive\bin\System.Net.Http.Formatting.xml
+E:\Applied Project\StayLive\StayLive\StayLive\bin\System.Web.Http.xml
+E:\Applied Project\StayLive\StayLive\StayLive\bin\System.Web.Http.WebHost.xml
+E:\Applied Project\StayLive\StayLive\StayLive\bin\System.Web.Helpers.xml
+E:\Applied Project\StayLive\StayLive\StayLive\bin\System.Web.Mvc.xml
+E:\Applied Project\StayLive\StayLive\StayLive\bin\System.Web.Optimization.xml
+E:\Applied Project\StayLive\StayLive\StayLive\bin\System.Web.Razor.xml
+E:\Applied Project\StayLive\StayLive\StayLive\bin\System.Web.WebPages.xml
+E:\Applied Project\StayLive\StayLive\StayLive\bin\System.Web.WebPages.Deployment.xml
+E:\Applied Project\StayLive\StayLive\StayLive\bin\System.Web.WebPages.Razor.xml
+E:\Applied Project\StayLive\StayLive\StayLive\bin\Antlr3.Runtime.pdb
+E:\Applied Project\StayLive\StayLive\StayLive\bin\Newtonsoft.Json.xml
+E:\Applied Project\StayLive\StayLive\StayLive\bin\Microsoft.ApplicationInsights.xml
+E:\Applied Project\StayLive\StayLive\StayLive\bin\Microsoft.AI.DependencyCollector.xml
+E:\Applied Project\StayLive\StayLive\StayLive\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\Applied Project\StayLive\StayLive\StayLive\bin\Microsoft.AI.WindowsServer.xml
+E:\Applied Project\StayLive\StayLive\StayLive\bin\Microsoft.AI.Web.xml
+E:\Applied Project\StayLive\StayLive\StayLive\obj\Debug\StayLive.Resources.Companies.resources
+E:\Applied Project\StayLive\StayLive\StayLive\obj\Debug\StayLive.Resources.General.resources
+E:\Applied Project\StayLive\StayLive\StayLive\obj\Debug\StayLive.Resources.Levels.resources
+E:\Applied Project\StayLive\StayLive\StayLive\obj\Debug\StayLive.Resources.Tickets.resources
+E:\Applied Project\StayLive\StayLive\StayLive\obj\Debug\StayLive.Resources.Users.resources
+E:\Applied Project\StayLive\StayLive\StayLive\obj\Debug\StayLive.Resources.Validations.resources
+E:\Applied Project\StayLive\StayLive\StayLive\obj\Debug\StayLive.csproj.GenerateResource.Cache
+E:\Applied Project\StayLive\StayLive\StayLive\obj\Debug\StayLive.csproj.CoreCompileInputs.cache
+E:\Applied Project\StayLive\StayLive\StayLive\obj\Debug\StayLive.dll
+E:\Applied Project\StayLive\StayLive\StayLive\obj\Debug\StayLive.pdb
+E:\Applied Project\StayLive\StayLive\StayLive\obj\Debug\StayLive.csprojResolveAssemblyReference.cache
+E:\Applied\StayLive\StayLive\StayLive\bin\ApplicationInsights.config
+E:\Applied\StayLive\StayLive\StayLive\bin\StayLive.dll.config
+E:\Applied\StayLive\StayLive\StayLive\bin\StayLive.dll
+E:\Applied\StayLive\StayLive\StayLive\bin\StayLive.pdb
+E:\Applied\StayLive\StayLive\StayLive\bin\Antlr3.Runtime.dll
+E:\Applied\StayLive\StayLive\StayLive\bin\EntityFramework.dll
+E:\Applied\StayLive\StayLive\StayLive\bin\EntityFramework.SqlServer.dll
+E:\Applied\StayLive\StayLive\StayLive\bin\Microsoft.AI.Agent.Intercept.dll
+E:\Applied\StayLive\StayLive\StayLive\bin\Microsoft.AI.DependencyCollector.dll
+E:\Applied\StayLive\StayLive\StayLive\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\Applied\StayLive\StayLive\StayLive\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\Applied\StayLive\StayLive\StayLive\bin\Microsoft.AI.Web.dll
+E:\Applied\StayLive\StayLive\StayLive\bin\Microsoft.AI.WindowsServer.dll
+E:\Applied\StayLive\StayLive\StayLive\bin\Microsoft.ApplicationInsights.dll
+E:\Applied\StayLive\StayLive\StayLive\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Applied\StayLive\StayLive\StayLive\bin\Microsoft.Web.Infrastructure.dll
+E:\Applied\StayLive\StayLive\StayLive\bin\Newtonsoft.Json.dll
+E:\Applied\StayLive\StayLive\StayLive\bin\System.Linq.Dynamic.dll
+E:\Applied\StayLive\StayLive\StayLive\bin\System.Net.Http.Formatting.dll
+E:\Applied\StayLive\StayLive\StayLive\bin\System.Web.Helpers.dll
+E:\Applied\StayLive\StayLive\StayLive\bin\System.Web.Http.dll
+E:\Applied\StayLive\StayLive\StayLive\bin\System.Web.Http.WebHost.dll
+E:\Applied\StayLive\StayLive\StayLive\bin\System.Web.Mvc.dll
+E:\Applied\StayLive\StayLive\StayLive\bin\System.Web.Optimization.dll
+E:\Applied\StayLive\StayLive\StayLive\bin\System.Web.Razor.dll
+E:\Applied\StayLive\StayLive\StayLive\bin\System.Web.WebPages.Deployment.dll
+E:\Applied\StayLive\StayLive\StayLive\bin\System.Web.WebPages.dll
+E:\Applied\StayLive\StayLive\StayLive\bin\System.Web.WebPages.Razor.dll
+E:\Applied\StayLive\StayLive\StayLive\bin\WebGrease.dll
+E:\Applied\StayLive\StayLive\StayLive\bin\EntityFramework.xml
+E:\Applied\StayLive\StayLive\StayLive\bin\EntityFramework.SqlServer.xml
+E:\Applied\StayLive\StayLive\StayLive\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Applied\StayLive\StayLive\StayLive\bin\System.Net.Http.Formatting.xml
+E:\Applied\StayLive\StayLive\StayLive\bin\System.Web.Http.xml
+E:\Applied\StayLive\StayLive\StayLive\bin\System.Web.Http.WebHost.xml
+E:\Applied\StayLive\StayLive\StayLive\bin\System.Web.Helpers.xml
+E:\Applied\StayLive\StayLive\StayLive\bin\System.Web.Mvc.xml
+E:\Applied\StayLive\StayLive\StayLive\bin\System.Web.Optimization.xml
+E:\Applied\StayLive\StayLive\StayLive\bin\System.Web.Razor.xml
+E:\Applied\StayLive\StayLive\StayLive\bin\System.Web.WebPages.xml
+E:\Applied\StayLive\StayLive\StayLive\bin\System.Web.WebPages.Deployment.xml
+E:\Applied\StayLive\StayLive\StayLive\bin\System.Web.WebPages.Razor.xml
+E:\Applied\StayLive\StayLive\StayLive\bin\Antlr3.Runtime.pdb
+E:\Applied\StayLive\StayLive\StayLive\bin\Newtonsoft.Json.xml
+E:\Applied\StayLive\StayLive\StayLive\bin\Microsoft.ApplicationInsights.xml
+E:\Applied\StayLive\StayLive\StayLive\bin\Microsoft.AI.DependencyCollector.xml
+E:\Applied\StayLive\StayLive\StayLive\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\Applied\StayLive\StayLive\StayLive\bin\Microsoft.AI.WindowsServer.xml
+E:\Applied\StayLive\StayLive\StayLive\bin\Microsoft.AI.Web.xml
+E:\Applied\StayLive\StayLive\StayLive\obj\Debug\StayLive.Resources.Companies.resources
+E:\Applied\StayLive\StayLive\StayLive\obj\Debug\StayLive.Resources.General.resources
+E:\Applied\StayLive\StayLive\StayLive\obj\Debug\StayLive.Resources.Levels.resources
+E:\Applied\StayLive\StayLive\StayLive\obj\Debug\StayLive.Resources.Tickets.resources
+E:\Applied\StayLive\StayLive\StayLive\obj\Debug\StayLive.Resources.Users.resources
+E:\Applied\StayLive\StayLive\StayLive\obj\Debug\StayLive.Resources.Validations.resources
+E:\Applied\StayLive\StayLive\StayLive\obj\Debug\StayLive.csproj.GenerateResource.Cache
+E:\Applied\StayLive\StayLive\StayLive\obj\Debug\StayLive.csproj.CoreCompileInputs.cache
+E:\Applied\StayLive\StayLive\StayLive\obj\Debug\StayLive.dll
+E:\Applied\StayLive\StayLive\StayLive\obj\Debug\StayLive.pdb
+E:\Applied\StayLive\StayLive\StayLive\obj\Debug\StayLive.csprojAssemblyReference.cache
+E:\Applied\StayLive\StayLive\StayLive\obj\Debug\StayLive.csproj.CopyComplete

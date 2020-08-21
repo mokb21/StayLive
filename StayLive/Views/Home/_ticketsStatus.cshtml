@@ -1,0 +1,96 @@
+﻿@model StayLive.Models.Home.HomeVM
+<div class="row">
+    <div class="col-md-12">
+        <div class="card card-inverse card-success cursor-url m-b-10 All" onclick="window.location = GeneralHelper.Url('TicketsByStatus', 'Ticket', 'Tickets', { 'Status': '0' })">
+            <div class="card-body">
+                <div class="d-flex">
+                    <div class="m-r-20 align-self-center">
+                        <h1 class="text-white"><i class="mdi mdi-email-variant"></i></h1>
+                    </div>
+                    <div>
+                        <h3 class="card-title">@StayLive.Resources.Tickets.All</h3>
+                        <h6 class="card-subtitle">@(Model.Pending + Model.Opened + Model.Completed)</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="card card-inverse card-success cursor-url m-b-10 Opened" onclick="window.location = GeneralHelper.Url('TicketsByStatus', 'Ticket', 'Tickets', { 'Status': '2' })">
+            <div class="card-body">
+                <div class="d-flex">
+                    <div class="m-r-20 align-self-center">
+                        <h1 class="text-white"><i class="mdi mdi-email-open"></i></h1>
+                    </div>
+                    <div>
+                        <h3 class="card-title">@StayLive.Resources.Tickets.Opened</h3>
+                        <h6 class="card-subtitle">@Model.Opened</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="card card-inverse card-success cursor-url m-b-10 Pending" onclick="window.location = GeneralHelper.Url('TicketsByStatus', 'Ticket', 'Tickets', { 'Status': '1' })">
+            <div class="card-body">
+                <div class="d-flex">
+                    <div class="m-r-20 align-self-center">
+                        <h1 class="text-white"><i class="mdi mdi-pause-circle"></i></h1>
+                    </div>
+                    <div>
+                        <h3 class="card-title">@StayLive.Resources.Tickets.Pending</h3>
+                        <h6 class="card-subtitle">@Model.Pending</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="card card-inverse card-success cursor-url m-b-10 Completed" onclick="window.location = GeneralHelper.Url('TicketsByStatus', 'Ticket', 'Tickets', { 'Status': '3' })">
+            <div class="card-body">
+                <div class="d-flex">
+                    <div class="m-r-20 align-self-center">
+                        <h1 class="text-white"><i class="mdi mdi-checkbox-marked-outline"></i></h1>
+                    </div>
+                    <div>
+                        <h3 class="card-title">@StayLive.Resources.Tickets.Completed</h3>
+                        <h6 class="card-subtitle">@Model.Completed</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @if (SessionHelper.AccountRole == (byte)StayLive.areas.Users.Models.UserRoles.Admin)
+    {
+        <div class="col-md-12">
+            <div class="card card-inverse card-success cursor-url m-b-10 Duplicated" onclick="window.location = GeneralHelper.Url('TicketsByStatus', 'Ticket', 'Tickets', { 'Status': '6' })">
+                <div class="card-body">
+                    <div class="d-flex">
+                        <div class="m-r-20 align-self-center">
+                            <h1 class="text-white"><i class="mdi mdi-email-alert"></i></h1>
+                        </div>
+                        <div>
+                            <h3 class="card-title">@StayLive.Resources.Tickets.Duplicated</h3>
+                            <h6 class="card-subtitle">@Model.Duplicated</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="card card-inverse card-success cursor-url m-b-10 Spam" onclick="window.location = GeneralHelper.Url('TicketsByStatus', 'Ticket', 'Tickets', { 'Status': '4' })">
+                <div class="card-body">
+                    <div class="d-flex">
+                        <div class="m-r-20 align-self-center">
+                            <h1 class="text-white"><i class="mdi mdi-delete-variant"></i></h1>
+                        </div>
+                        <div>
+                            <h3 class="card-title">@StayLive.Resources.Tickets.Spam</h3>
+                            <h6 class="card-subtitle">@Model.Spam</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

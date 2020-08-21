@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="StayLiveModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="EmailAddress" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="EmailPassword" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Logo" Type="varbinary(max)" />
+    <Property Name="SmtpPort" Type="smallint" Nullable="false" />
+    <Property Name="SmtpAddress" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="EnableSsl" Type="bit" Nullable="false" />
+    <Property Name="Pop3Port" Type="smallint" Nullable="false" />
+    <Property Name="Pop3Address" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="RegionId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Level">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="FirstHours" Type="int" Nullable="false" />
+    <Property Name="SecondName" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="SecondHours" Type="int" Nullable="false" />
+    <Property Name="ThirdName" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="CompanyId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Region">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ticket">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Mobile" Type="varchar" MaxLength="20" />
+    <Property Name="Subject" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Message" Type="nvarchar" MaxLength="4000" />
+    <Property Name="Status" Type="tinyint" Nullable="false" />
+    <Property Name="AssignedUserId" Type="int" />
+    <Property Name="UpdateUserId" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="CompanyId" Type="int" />
+    <Property Name="Level" Type="tinyint" Nullable="false" />
+    <Property Name="Attachment" Type="varbinary(max)" />
+    <Property Name="AttachmentFileName" Type="nvarchar" MaxLength="200" />
+    <Property Name="Key" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="TicketReply">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TicketId" Type="int" Nullable="false" />
+    <Property Name="Message" Type="nvarchar" MaxLength="4000" />
+    <Property Name="Status" Type="tinyint" Nullable="false" />
+    <Property Name="Attachment" Type="varbinary(max)" />
+    <Property Name="AttachmentFileName" Type="nvarchar" MaxLength="200" />
+    <Property Name="IsInternal" Type="bit" Nullable="false" />
+    <Property Name="CreateByUserId" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Mobile" Type="varchar" MaxLength="50" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Role" Type="tinyint" Nullable="false" />
+    <Property Name="Level" Type="tinyint" />
+    <Property Name="Password" Type="varbinary" MaxLength="500" Nullable="false" />
+    <Property Name="ProfilePhoto" Type="varbinary(max)" />
+    <Property Name="CompanyId" Type="int" />
+  </EntityType>
+  <Association Name="FK_Company_Region">
+    <End Role="Region" Type="Self.Region" Multiplicity="1" />
+    <End Role="Company" Type="Self.Company" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Region">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Company">
+        <PropertyRef Name="RegionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Level_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="1" />
+    <End Role="Level" Type="Self.Level" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Level">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TicketReply_CreateByUser">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="TicketReply" Type="Self.TicketReply" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TicketReply">
+        <PropertyRef Name="CreateByUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TicketReply_TicketId">
+    <End Role="Ticket" Type="Self.Ticket" Multiplicity="1" />
+    <End Role="TicketReply" Type="Self.TicketReply" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ticket">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TicketReply">
+        <PropertyRef Name="TicketId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tikcet_AssignedUser">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Ticket">
+        <PropertyRef Name="AssignedUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tikcet_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+    <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Ticket">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tikcet_CreateByUser">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Ticket">
+        <PropertyRef Name="UpdateUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="StayLiveModelStoreContainer">
+    <EntitySet Name="Company" EntityType="Self.Company" Schema="Ticketing" store:Type="Tables" />
+    <EntitySet Name="Level" EntityType="Self.Level" Schema="Ticketing" store:Type="Tables" />
+    <EntitySet Name="Region" EntityType="Self.Region" Schema="Ticketing" store:Type="Tables" />
+    <EntitySet Name="Ticket" EntityType="Self.Ticket" Schema="Ticketing" store:Type="Tables" />
+    <EntitySet Name="TicketReply" EntityType="Self.TicketReply" Schema="Ticketing" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="Ticketing" store:Type="Tables" />
+    <AssociationSet Name="FK_Company_Region" Association="Self.FK_Company_Region">
+      <End Role="Region" EntitySet="Region" />
+      <End Role="Company" EntitySet="Company" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Level_Company" Association="Self.FK_Level_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Level" EntitySet="Level" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TicketReply_CreateByUser" Association="Self.FK_TicketReply_CreateByUser">
+      <End Role="User" EntitySet="User" />
+      <End Role="TicketReply" EntitySet="TicketReply" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TicketReply_TicketId" Association="Self.FK_TicketReply_TicketId">
+      <End Role="Ticket" EntitySet="Ticket" />
+      <End Role="TicketReply" EntitySet="TicketReply" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tikcet_AssignedUser" Association="Self.FK_Tikcet_AssignedUser">
+      <End Role="User" EntitySet="User" />
+      <End Role="Ticket" EntitySet="Ticket" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tikcet_Company" Association="Self.FK_Tikcet_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Ticket" EntitySet="Ticket" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tikcet_CreateByUser" Association="Self.FK_Tikcet_CreateByUser">
+      <End Role="User" EntitySet="User" />
+      <End Role="Ticket" EntitySet="Ticket" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Company" Association="Self.FK_User_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

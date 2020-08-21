@@ -1,0 +1,44 @@
+﻿@model StayLive.Models.SaveModel
+<div class="modal-dialog @(Model.isLarge?"modal-lg":"")">
+    <div class="modal-content">
+        @if (!Model.isAjax)
+            {
+                using (Html.BeginForm(Model.action, Model.controller, new { area = Model.area }, FormMethod.Post, new { @id = "form" }))
+                {
+                @Html.HiddenFor(a => a.id)
+                @Html.HiddenFor(a => a.id1)
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">@Model.title</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    @Html.Partial(Model.view, Model.model)
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">@StayLive.Resources.General.Close</button>
+                    <button type="submit" class="btn btn-primary waves-effect waves-light">@StayLive.Resources.General.Save</button>
+                </div>
+            }
+        }
+        else
+        {
+            using (Ajax.BeginForm(Model.action, Model.controller, new { area = Model.area },
+                new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "modal-content", OnComplete = Model.onCompleteFunction, OnSuccess = Model.onSuccessFunction, OnFailure = Model.onFailureFunction }))
+            {
+                @Html.HiddenFor(a => a.id)
+                @Html.HiddenFor(a => a.id1)
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">@Model.title</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body">
+                    @Html.Partial(Model.view, Model.model)
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">@StayLive.Resources.General.Close</button>
+                    <button type="submit" class="btn btn-primary waves-effect waves-light">@StayLive.Resources.General.Save</button>
+                </div>
+            }
+        }
+    </div>
+</div>

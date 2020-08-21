@@ -1,0 +1,27 @@
+E:\Applied Project\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.exe.config
+E:\Applied Project\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.exe
+E:\Applied Project\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.pdb
+E:\Applied Project\StayLive\StayLive\StayLiveServices\bin\Debug\EntityFramework.dll
+E:\Applied Project\StayLive\StayLive\StayLiveServices\bin\Debug\EntityFramework.SqlServer.dll
+E:\Applied Project\StayLive\StayLive\StayLiveServices\bin\Debug\OpenPop.dll
+E:\Applied Project\StayLive\StayLive\StayLiveServices\bin\Debug\EntityFramework.xml
+E:\Applied Project\StayLive\StayLive\StayLiveServices\bin\Debug\EntityFramework.SqlServer.xml
+E:\Applied Project\StayLive\StayLive\StayLiveServices\obj\Debug\StayLiveServices.csprojResolveAssemblyReference.cache
+E:\Applied Project\StayLive\StayLive\StayLiveServices\obj\Debug\StayLiveServices.ProjectInstaller.resources
+E:\Applied Project\StayLive\StayLive\StayLiveServices\obj\Debug\StayLiveServices.csproj.GenerateResource.Cache
+E:\Applied Project\StayLive\StayLive\StayLiveServices\obj\Debug\StayLiveServices.csproj.CoreCompileInputs.cache
+E:\Applied Project\StayLive\StayLive\StayLiveServices\obj\Debug\StayLiveServices.exe
+E:\Applied Project\StayLive\StayLive\StayLiveServices\obj\Debug\StayLiveServices.pdb
+E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.exe.config
+E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.exe
+E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\StayLiveServices.pdb
+E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\EntityFramework.dll
+E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\EntityFramework.SqlServer.dll
+E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\OpenPop.dll
+E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\EntityFramework.xml
+E:\Applied\StayLive\StayLive\StayLiveServices\bin\Debug\EntityFramework.SqlServer.xml
+E:\Applied\StayLive\StayLive\StayLiveServices\obj\Debug\StayLiveServices.ProjectInstaller.resources
+E:\Applied\StayLive\StayLive\StayLiveServices\obj\Debug\StayLiveServices.csproj.GenerateResource.Cache
+E:\Applied\StayLive\StayLive\StayLiveServices\obj\Debug\StayLiveServices.csproj.CoreCompileInputs.cache
+E:\Applied\StayLive\StayLive\StayLiveServices\obj\Debug\StayLiveServices.exe
+E:\Applied\StayLive\StayLive\StayLiveServices\obj\Debug\StayLiveServices.pdb

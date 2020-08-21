@@ -1,0 +1,180 @@
+﻿@model StayLive.areas.Users.Models.User.UserVM
+@{
+    ViewBag.Title = StayLive.Resources.General.User;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Scripts.Render("~/bundles/users-helpers")
+
+<div class="container-fluid">
+    <div class="row page-titles">
+        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+            @Html.Breadcrumb(new string[] { StayLive.Resources.General.Users, (Model.Id == 0 ? StayLive.Resources.Users.NewUser : Model.Name) }, new string[] { Url.Action("", "User", new { area = "Users" }) })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                @using (Html.BeginForm("UserProfile", "User", new { area = "Users" }, FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.HiddenFor(model => model.Id, new { @id = "hdId" })
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                                <div class="row m-t-10">
+                                    <div class="col-md-2 col-lg-2">
+                                        <input type="file" class="dropify" id="Photo" name="Photo" data-max-file-size="3M" data-allowed-file-extensions="png jpg" data-default-file="@(Model.Id > 0 ? Url.DrawImage("u","Id",Model.Id.ToString()): "")" />
+                                    </div>
+                                    <div class="col-md-10 col-lg-10">
+                                        <div class="row">
+                                            <div class="col-md-6 col-lg-6">
+                                                <div class="floating-labels">
+                                                    <div class="form-group">
+                                                        @if (Model.Id > 0)
+                                                        {
+                                                            @Html.DisabledTextBox(model => model.Name, new { @class = "form-control", @Id = "txtName" }, Model.Id != 0)
+                                                            @Html.HiddenFor(model => model.Name)
+                                                        }
+                                                        else
+                                                        {
+                                                             @Html.TextBoxFor(model => model.Name, new { @class = "form-control", @Id = "txtName" })
+                                                        }
+                                                        <span class="bar"></span>
+                                                        <label for="txtName">@StayLive.Resources.General.Name</label>
+                                                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-6">
+                                                <div class="floating-labels">
+                                                    <div class="form-group">
+                                                        @if (Model.Id > 0)
+                                                        {
+                                                            @Html.DisabledTextBox(model => model.UserName, new { @class = "form-control", @Id = "txtUserName" }, Model.Id != 0)
+                                                            @Html.HiddenFor(model => model.UserName)
+                                                        }
+                                                        else
+                                                        {
+                                                            @Html.TextBoxFor(model => model.UserName, new { @class = "form-control", @Id = "txtUserName" })
+                                                        }
+                                                        <span class="bar"></span>
+                                                        <label for="txtUserName">@StayLive.Resources.General.UserName</label>
+                                                        @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-6">
+                                                <div class="floating-labels">
+                                                    <div class="form-group">
+                                                        @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @Id = "txtEmail" })
+                                                        <span class="bar"></span>
+                                                        <label for="txtName">@StayLive.Resources.General.Email</label>
+                                                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-6">
+                                                <div class="floating-labels">
+                                                    <div class="form-group">
+                                                        @Html.TextBoxFor(model => model.Mobile, new { @class = "form-control p-0", @Id = "txtMobile" })
+                                                        <span class="bar"></span>
+                                                        <label for="txtMobile">@StayLive.Resources.General.Mobile</label>
+                                                        @Html.ValidationMessageFor(model => model.Mobile, "", new { @class = "text-danger" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @if (SessionHelper.AccountRole == (byte)StayLive.areas.Users.Models.UserRoles.SystemAdmin)
+                                            {
+                                                <div class="col-md-6 col-lg-6">
+                                                    <div class="floating-labels">
+                                                        <div class="form-group">
+                                                            @Html.DropDownListFor(model => model.Role, Model.RolesList, new { @class = "form-control p-0", @Id = "ddlRoles", @onchange = "UsersHelper.notSuperAdminFields()" })
+                                                            <span class="bar"></span>
+                                                            <label for="ddlRoles">@StayLive.Resources.Users.Role</label>
+                                                            @Html.ValidationMessageFor(model => model.Role, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-lg-6 notSuperAdmin">
+                                                    <div class="floating-labels">
+                                                        <div class="form-group">
+                                                            @Html.DropDownListFor(model => model.Company, Model.CompaniesList, new { @class = "form-control p-0", @Id = "ddlCompany" })
+                                                            <span class="bar"></span>
+                                                            <label for="ddlCompany">@StayLive.Resources.General.Company</label>
+                                                            @Html.ValidationMessageFor(model => model.Company, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            }
+                                            else
+                                            {
+                                                <div class="col-md-6 col-lg-6">
+                                                    <div class="floating-labels">
+                                                        <div class="form-group">
+                                                            @Html.DropDownListFor(model => model.Role, Model.RolesList, new { @class = "form-control p-0", @Id = "ddlRoles", @onchange = "UsersHelper.notSuperAdminOrAdmin()" })
+                                                            <span class="bar"></span>
+                                                            <label for="ddlRoles">@StayLive.Resources.Users.Role</label>
+                                                            @Html.ValidationMessageFor(model => model.Role, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-lg-6 notSuperAdminOrAdmin">
+                                                    <div class="floating-labels">
+                                                        <div class="form-group">
+                                                            @Html.DropDownListFor(model => model.Level, Model.LevelsList, new { @class = "form-control p-0", @Id = "ddlLevel" })
+                                                            <span class="bar"></span>
+                                                            <label for="ddlLevel">@StayLive.Resources.General.Level</label>
+                                                            @Html.ValidationMessageFor(model => model.Level, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 m-t-15">
+                                <div class="row">
+                                    <div class="col-md-6 col-lg-6 notNewUser">
+                                        <div class="floating-labels">
+                                            <div class="form-group">
+                                                @Html.PasswordFor(model => model.Password, new { @class = "form-control", @Id = "txtPassword" })
+                                                <span class="bar"></span>
+                                                <label for="txtPassword">@StayLive.Resources.General.Password</label>
+                                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-6 notNewUser">
+                                        <div class="floating-labels">
+                                            <div class="form-group">
+                                                @Html.PasswordFor(model => model.ConfirmPassword, new { @class = "form-control", @Id = "txtConfirmPassword" })
+                                                <span class="bar"></span>
+                                                <label for="txtConfirmPassword">@StayLive.Resources.General.ConfirmPassword</label>
+                                                @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <hr />
+                                <a href="@Url.Action("Index", "User", new { @area = "Users" })" class="btn btn-secondary waves-effect waves-light m-r-5 pull-right">@StayLive.Resources.General.Cancel</a>
+                                <button class="btn btn-primary waves-effect waves-light m-r-5 pull-right">@StayLive.Resources.General.Save</button>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+    <script>
+        $(document).ready(function () { UsersHelper.UserProfileLoad(); })
+    </script>
+}s

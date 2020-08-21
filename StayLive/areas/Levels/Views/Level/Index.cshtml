@@ -1,0 +1,109 @@
+﻿@model StayLive.areas.Levels.Level.Models.LevelVM
+@{
+    ViewBag.Title = StayLive.Resources.General.Levels;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row page-titles">
+        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+            @Html.Breadcrumb(new string[] { StayLive.Resources.General.Levels })
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div id="LevelsTree"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="card">
+                @using (Html.BeginForm("Index", "Level", new { area = "Levels" }, FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    <div class="card-body">
+                        @Html.HiddenFor(model => model.Id)
+                        <div class="row">
+                            <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                                <div class="floating-labels">
+                                    <div class="form-group">
+                                        @Html.TextBoxFor(model => model.First, new { @class = "form-control", @Id = "txtFirst" })
+                                        <span class="bar"></span>
+                                        <label for="txtEmailAddress">@StayLive.Resources.Levels.First</label>
+                                        @Html.ValidationMessageFor(model => model.First, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                                <div class="floating-labels">
+                                    <div class="form-group">
+                                        @Html.TextBoxFor(model => model.FirstTime, new { @class = "form-control number", @Id = "txtFirstHrs" })
+                                        <span class="bar"></span>
+                                        <label for="txtFirstHrs">@StayLive.Resources.Levels.Hours</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                                <div class="floating-labels">
+                                    <div class="form-group">
+                                        @Html.TextBoxFor(model => model.Second, new { @class = "form-control", @Id = "txtSecond" })
+                                        <span class="bar"></span>
+                                        <label for="txtSecond">@StayLive.Resources.Levels.Second</label>
+                                        @Html.ValidationMessageFor(model => model.Second, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                                <div class="floating-labels">
+                                    <div class="form-group">
+                                        @Html.TextBoxFor(model => model.SecondTime, new { @class = "form-control number", @Id = "txtSecondHrs" })
+                                        <span class="bar"></span>
+                                        <label for="txtSecondHrs">@StayLive.Resources.Levels.Hours</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                                <div class="floating-labels">
+                                    <div class="form-group">
+                                        @Html.TextBoxFor(model => model.Third, new { @class = "form-control", @Id = "txtThird" })
+                                        <span class="bar"></span>
+                                        <label for="txtThird">@StayLive.Resources.Levels.Third</label>
+                                        @Html.ValidationMessageFor(model => model.Third, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                                <div class="floating-labels">
+                                    <div class="form-group">
+                                        @Html.TextBoxFor(model => model.ThirdTime, new { @class = "form-control number", @Id = "txtThirdHrs", @disabled = true })
+                                        <span class="bar"></span>
+                                        <label for="txtThirdHrs">@StayLive.Resources.Levels.Hours</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                @*<a href="@Url.Action("", "level", new { @area = "Levels" })" class="btn btn-secondary waves-effect waves-light m-r-5 pull-right">@StayLive.Resources.General.Cancel</a>*@
+                                <button type="submit" class="btn btn-primary waves-effect waves-light m-r-5 pull-right">@StayLive.Resources.General.Save</button>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@Scripts.Render("~/bundles/levels-helpers")
+
+@section scripts{
+    <script>
+        $(document).ready(function () { LevelsHelper.IndexLoad(); })
+    </script>
+}

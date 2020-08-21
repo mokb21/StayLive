@@ -1,0 +1,185 @@
+﻿@model StayLive.areas.Companies.Models.Company.CompanyVM
+@{
+    ViewBag.Title = StayLive.Resources.General.Company;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row page-titles">
+        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+            @Html.Breadcrumb(new string[] { StayLive.Resources.General.Companies, (Model.Id == 0 ? StayLive.Resources.Companies.NewCompany : Model.Name) }, new string[] { Url.Action("", "company", new { area = "Companies" }) })
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                @using (Html.BeginForm("Company", "Company", new { area = "Companies" }, FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.HiddenFor(model => model.Id, new { @Id = "hfId" })
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                                <div class="row m-t-10">
+                                    <div class="col-md-2 col-lg-2">
+                                        <input type="file" id="Logo" name="Logo" class="dropify" data-max-file-size="3M" data-show-errors="true" data-allowed-file-extensions="png jpg" data-default-file="@(Model.Id > 0 ? Url.DrawImage("c","Id",Model.Id.ToString()): "")" />
+                                    </div>
+                                    <div class="col-md-10 col-lg-10">
+                                        <div class="row">
+                                            <div class="col-md-6 col-lg-6">
+                                                <div class="floating-labels">
+                                                    <div class="form-group">
+                                                        @if (Model.Id>0)
+                                                        {
+                                                            @Html.DisabledTextBox(model => model.Name, new { @class = "form-control", @Id = "txtName" }, Model.Id != 0)
+                                                            @Html.HiddenFor(model => model.Name)
+                                                        }
+                                                        else
+                                                        {
+                                                            @Html.TextBoxFor(model => model.Name, new { @class = "form-control", @Id = "txtName" })
+                                                        }
+                                                        <span class="bar"></span>
+                                                        <label for="txtName">@StayLive.Resources.General.Name</label>
+                                                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-6">
+                                                <div class="floating-labels">
+                                                    <div class="form-group">
+                                                        @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @Id = "txtEmail" })
+                                                        <span class="bar"></span>
+                                                        <label for="txtName">@StayLive.Resources.General.Email</label>
+                                                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-6">
+                                                <div class="floating-labels">
+                                                    <div class="form-group">
+                                                        @Html.DropDownListFor(model => model.Region, Model.RegionsList, new { @class = "form-control p-0", @Id = "ddlRegion" })
+                                                        <span class="bar"></span>
+                                                        <label for="ddlRegion">@StayLive.Resources.General.Region</label>
+                                                        @Html.ValidationMessageFor(model => model.Region, "", new { @class = "text-danger" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-6">
+                                                <div class="row">
+                                                    <div class="col-9">
+                                                        <div class="floating-labels">
+                                                            <div class="form-group">
+                                                                @Html.TextBoxFor(model => model.EmailAddress, new { @class = "form-control", @Id = "txtEmailAddress" })
+                                                                <span class="bar"></span>
+                                                                <label for="txtEmailAddress">@StayLive.Resources.Companies.EmailAddress</label>
+                                                                @Html.ValidationMessageFor(model => model.EmailAddress, "", new { @class = "text-danger" })
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <div class="form-group m-t-10">
+                                                            @Html.CheckBoxFor(model => model.EnableSSL, new { @class = "js-switch", @Id = "chkEnableSSL", data_color = "#232F3E", data_secondary_color = "#FF2B52", data_size = "small" })
+                                                            <label for="chkEnableSSL">@StayLive.Resources.Companies.EnableSSL</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-6">
+                                                <div class="row">
+                                                    <div class="col-md-4 col-lg-4">
+                                                        <div class="floating-labels">
+                                                            <div class="form-group">
+                                                                @Html.TextBoxFor(model => model.Pop3Port, new { @class = "form-control number", @Id = "txtPop3Port" })
+                                                                <span class="bar"></span>
+                                                                <label for="txtPop3Port">@StayLive.Resources.Companies.Pop3Port</label>
+                                                                @Html.ValidationMessageFor(model => model.Pop3Port, "", new { @class = "text-danger" })
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-8 col-lg-8">
+                                                        <div class="floating-labels">
+                                                            <div class="form-group">
+                                                                @Html.TextBoxFor(model => model.Pop3Address, new { @class = "form-control", @Id = "txtPop3Address" })
+                                                                <span class="bar"></span>
+                                                                <label for="txtPop3Address">@StayLive.Resources.Companies.Pop3Address</label>
+                                                                @Html.ValidationMessageFor(model => model.Pop3Address, "", new { @class = "text-danger" })
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-6">
+                                                <div class="row">
+                                                    <div class="col-md-4 col-lg-4">
+                                                        <div class="floating-labels">
+                                                            <div class="form-group">
+                                                                @Html.TextBoxFor(model => model.SmtpPort, new { @class = "form-control number", @Id = "txtStmpPort" })
+                                                                <span class="bar"></span>
+                                                                <label for="txtStmpPort">@StayLive.Resources.Companies.SmtpPort</label>
+                                                                @Html.ValidationMessageFor(model => model.SmtpPort, "", new { @class = "text-danger" })
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-8 col-lg-8">
+                                                        <div class="floating-labels">
+                                                            <div class="form-group">
+                                                                @Html.TextBoxFor(model => model.SmtpAdderss, new { @class = "form-control", @Id = "txtStmpAddress" })
+                                                                <span class="bar"></span>
+                                                                <label for="txtStmpAddress">@StayLive.Resources.Companies.SmtpAddress</label>
+                                                                @Html.ValidationMessageFor(model => model.SmtpAdderss, "", new { @class = "text-danger" })
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 m-t-15 notNewCompany">
+                                <div class="row">
+                                    <div class="col-md-6 col-lg-6">
+                                        <div class="floating-labels">
+                                            <div class="form-group">
+                                                @Html.PasswordFor(model => model.Password, new { @class = "form-control", @Id = "txtPassword" })
+                                                <span class="bar"></span>
+                                                <label for="txtPassword">@StayLive.Resources.General.Password</label>
+                                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-6">
+                                        <div class="floating-labels">
+                                            <div class="form-group">
+                                                @Html.PasswordFor(model => model.ConfirmPassword, new { @class = "form-control", @Id = "txtConfirmPassword" })
+                                                <span class="bar"></span>
+                                                <label for="txtConfirmPassword">@StayLive.Resources.General.ConfirmPassword</label>
+                                                @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <hr />
+                                <a href="@Url.Action("Index", "Company", new { @area = "Companies" })" class="btn btn-secondary waves-effect waves-light m-r-5 pull-right">@StayLive.Resources.General.Cancel</a>
+                                <button class="btn btn-primary waves-effect waves-light m-r-5 pull-right">@StayLive.Resources.General.Save</button>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@Scripts.Render("~/bundles/Companies-helpers")
+
+@section scripts{
+    <script>
+        $(document).ready(function () { CompanyHelper.CompanyLoaded(); })
+    </script>
+}

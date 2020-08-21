@@ -1,0 +1,96 @@
+﻿@model StayLive.Models.Home.HomeVM
+<div class="row m-t-20">
+    <div class="col-lg-9 col-md-9">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="card">
+                    <img src="~/assets/images/profile-bg.jpg" />
+                    <div class="card-body little-profile text-center">
+                        <div class="pro-img"><img src="@Url.DrawImage("u", new string[] { "Id", SessionHelper.AccountId.ToString() })"></div>
+                        <h3 class="m-b-0">@Model.Name</h3>
+                        <p>@Model.Email</p>
+                        <div class="row text-center">
+                            <div class="col-lg-4 col-md-4">
+                                <h3 class="m-b-0 font-light">@Model.AssigedTo</h3><small>@StayLive.Resources.Tickets.AssignedTo</small>
+                            </div>
+                            <div class="col-lg-4 col-md-4">
+                                <h3 class="m-b-0 font-light">@Model.LastUpdated</h3><small>@StayLive.Resources.Tickets.LastUpdate</small>
+                            </div>
+                            <div class="col-lg-4 col-md-">
+                                <h3 class="m-b-0 font-light">@Model.Solved</h3><small>@StayLive.Resources.Tickets.Solved</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-lg-6 com-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h4 class="card-title">@StayLive.Resources.General.AssignedTicketStatus</h4>
+                            </div>
+                            <div class="col-md-4">
+                                <span class="text-info pull-right" data-toggle="tooltip" title="@StayLive.Resources.General.AssignedTicketStatusInfo"><i class="mdi mdi-information"></i></span>
+                                <span class="badge badge-info pull-right m-r-5" style="margin-top:3px">@StayLive.Resources.General.AllTickets @Model.AllAssignedTickets</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <canvas id="AssignedTicketStatusChart" height="100"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @if (SessionHelper.AccountRole == (byte)StayLive.areas.Users.Models.UserRoles.Admin)
+            {
+                <div class="col-md-6 col-lg-6 com-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <h4 class="card-title">@StayLive.Resources.General.LevelsStatus</h4>
+                                </div>
+                                <div class="col-md-4">
+                                    <span class="text-info pull-right" data-toggle="tooltip" title="@StayLive.Resources.General.LevelsStatusInfo"><i class="mdi mdi-information"></i></span>
+                                    <span class="badge badge-info pull-right m-r-5" style="margin-top:3px">@StayLive.Resources.General.AllTickets @(Model.Completed + Model.Pending + Model.Opened)</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <canvas id="LevelsStatusChart" height="100"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-3">
+        @Html.Partial("~/Views/Home/_ticketsStatus.cshtml")
+    </div>
+</div>
+@if (SessionHelper.AccountRole == (byte)StayLive.areas.Users.Models.UserRoles.Admin)
+{
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h4 class="card-title">@StayLive.Resources.General.UsersStatus</h4>
+                        </div>
+                        <div class="col-md-4">
+                            <span class="text-info pull-right " data-toggle="tooltip" title="@StayLive.Resources.General.LevelsStatusInfo"><i class="mdi mdi-information"></i></span>
+                            <span class="pull-right text-info m-r-10"><i class="mdi mdi-checkbox-blank-circle"></i> @StayLive.Resources.General.CompletedInLastMonth</span>
+                            <span class="pull-right text-danger m-r-10"><i class="mdi mdi-checkbox-blank-circle"></i> @StayLive.Resources.General.AssignedTickets</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <canvas id="UsersStatusChart" height="40"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

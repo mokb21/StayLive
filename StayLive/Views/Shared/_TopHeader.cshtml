@@ -1,0 +1,42 @@
+﻿<header class="topbar">
+    <nav class="navbar top-navbar navbar-expand-md navbar-light">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="@Url.Action("", "Home", new { @area = "" })">
+                <b>
+                    <img src="~/assets/images/stay-live-01.png" alt="homepage" class="light-logo" width="180px" />
+                </b>
+            </a>
+        </div>
+        <div class="navbar-collapse">
+            <ul class="navbar-nav mr-auto mt-md-0 m-l-40">
+                <li class="nav-item m-l-40"> <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark m-l-30" href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
+            </ul>
+            <ul class="navbar-nav my-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="@Url.DrawImage("u", new string[] { "Id", SessionHelper.AccountId.ToString() })" alt="user" class="profile-pic" height="30px" width="30px"/><small> @SessionHelper.AccountName</small></a>
+                    <div class="dropdown-menu dropdown-menu-right scale-up" >
+                        <ul class="dropdown-user" style="width:350px">
+                            <li>
+                                <div class="dw-user-box">
+                                    <div class="u-img">
+                                        <img src="@Url.DrawImage("u", new string[] { "Id", SessionHelper.AccountId.ToString() })" alt="user" height="80px" width="80px" />
+                                        <input type="file" name="ProfilePhoto" id="ProfilePhoto" accept="image/x-png,image/gif,image/jpeg" onchange="UpdateProfileImage()"/>
+                                        <label class="btn btn-primary" for="ProfilePhoto"><i class="mdi mdi-pencil"></i></label>
+                                    </div>
+                                    <div class="u-text m-t-20">
+                                        <h4>@SessionHelper.AccountName</h4>
+                                        <p class="text-muted">@SessionHelper.AccountEmail</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="@Url.Empty()" onclick="ShowSaveModal(GeneralHelper.Url('ChangePassword', 'Home', ''))"><i class="mdi mdi-account-key"></i> @StayLive.Resources.General.ChangePassword</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="@Url.Action("Logout", "Login", new { @area = "" })"><i class="mdi mdi-logout"></i> @StayLive.Resources.General.Logout</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>

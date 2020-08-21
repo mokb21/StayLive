@@ -1,0 +1,59 @@
+﻿@model StayLive.areas.Tickets.Models.Ticket.TicketsTableVM
+<div class="right-sidebar" id="TicketsFilter" style="width:450px">
+    <div class="slimscrollright">
+        @using (Html.BeginForm("Filter", "Ticket", new { area = "Tickets" }, FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div class="rpanel-title"> @StayLive.Resources.General.Filter <span><i class="ti-close filter-side-toggle"></i></span> </div>
+            <div class="r-panel-body">
+                <div class="m-t-5">
+                    <div class="floating-labels">
+                        <div class="form-group">
+                            @Html.DropDownListFor(model => model.User, Model.UsersList, new { @Id = "ddlAssignedTo", @class = "form-control p-0" })
+                            <span class="bar"></span>
+                            <label for="ddlAssignedTo">@StayLive.Resources.Tickets.AssignedTo</label>
+                        </div>
+                        <div class="form-group">
+                            @Html.DropDownListFor(model => model.Level, Model.LevelList, new { @Id = "ddlLevel", @class = "form-control p-0" })
+                            <span class="bar"></span>
+                            <label for="ddlLevel">@StayLive.Resources.General.Level</label>
+                        </div>
+                        <div class="form-group">
+                            @Html.DropDownListFor(model => model.Date, Model.DateList, new { @Id = "ddlDate", @class = "form-control p-0" })
+                            <span class="bar"></span>
+                            <label for="ddlDate">@StayLive.Resources.General.Date</label>
+                        </div>
+                    </div>
+                    <div class="m-t-20">
+                        <label>@StayLive.Resources.Tickets.Status:</label><br />
+                        @Html.RadioButtonFor(model => model.Status, 0,
+                        new { @class = "with-gap radio-col-red radio-col-All", @Id = "rdoAll" })
+                        <label for="rdoAll"><span class="badge badge-info All">@StayLive.Resources.Tickets.All</span></label><br />
+                        @Html.RadioButtonFor(model => model.Status, @StayLive.areas.Tickets.Models.TicketInfo.TicketStatus.Opened.GetHashCode(),
+                        new { @class = "with-gap radio-col-red radio-col-Opened", @Id = "rdoOpened" })
+                        <label for="rdoOpened"><span class="badge badge-info Opened">@StayLive.Resources.Tickets.Opened</span></label><br />
+                        @Html.RadioButtonFor(model => model.Status, @StayLive.areas.Tickets.Models.TicketInfo.TicketStatus.Pending.GetHashCode(),
+                        new { @class = "with-gap radio-col-red radio-col-Pending", @Id = "rdoPending" })
+                        <label for="rdoPending"><span class="badge badge-info Pending">@StayLive.Resources.Tickets.Pending</span></label><br />
+                        @Html.RadioButtonFor(model => model.Status, @StayLive.areas.Tickets.Models.TicketInfo.TicketStatus.Completed.GetHashCode(),
+                        new { @class = "with-gap radio-col-red radio-col-Completed", @Id = "rdoCompleted" })
+                        <label for="rdoCompleted"><span class="badge badge-info Completed">@StayLive.Resources.Tickets.Completed</span></label><br />
+                        @if (SessionHelper.AccountRole == (byte)StayLive.areas.Users.Models.UserRoles.Admin)
+                        {
+                        @Html.RadioButtonFor(model => model.Status, @StayLive.areas.Tickets.Models.TicketInfo.TicketStatus.Spam.GetHashCode(),
+                        new { @class = "with-gap radio-col-red radio-col-Spam", @Id = "rdoSpam" })
+                        <label for="rdoSpam"><span class="badge badge-info Spam">@StayLive.Resources.Tickets.Spam</span></label><br />
+                            @*@Html.RadioButtonFor(model => model.Status, @StayLive.areas.Tickets.Models.TicketInfo.TicketStatus.Deleted.GetHashCode(),
+                        new { @class = "with-gap radio-col-red radio-col-Deleted", @Id = "rdoDeleted" })
+                            <label for="rdoDeleted"><span class="badge badge-info Deleted">@StayLive.Resources.Tickets.Deleted</span></label><br />*@
+                        }
+                        @Html.RadioButtonFor(model => model.Status, @StayLive.areas.Tickets.Models.TicketInfo.TicketStatus.Duplicated.GetHashCode(),
+                        new { @class = "with-gap radio-col-red radio-col-Duplicated", @Id = "rdoDuplicated" })
+                        <label for="rdoDuplicated"><span class="badge badge-info Duplicated">@StayLive.Resources.Tickets.Duplicated</span></label><br />
+                    </div>
+                </div>
+                <hr />
+                <button type="submit" class="btn btn-primary waves-effect waves-light pull-right m-r-10">@StayLive.Resources.General.Apply</button>
+            </div>
+        }
+    </div>
+</div>

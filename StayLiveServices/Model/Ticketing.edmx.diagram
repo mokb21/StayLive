@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0988306a9ed04124a2285aeb4721533d" Name="Diagram1">
+        <EntityTypeShape EntityType="StayLiveModel.Company" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="StayLiveModel.Level" Width="1.5" PointX="5.25" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="StayLiveModel.Region" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="StayLiveModel.Ticket" Width="1.5" PointX="7.5" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="StayLiveModel.TicketReply" Width="1.5" PointX="9.75" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="StayLiveModel.User" Width="1.5" PointX="5.25" PointY="13.125" IsExpanded="true" />
+        <AssociationConnector Association="StayLiveModel.FK_Company_Region" ManuallyRouted="false" />
+        <AssociationConnector Association="StayLiveModel.FK_Level_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="StayLiveModel.FK_Tikcet_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="StayLiveModel.FK_User_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="StayLiveModel.FK_TicketReply_TicketId" ManuallyRouted="false" />
+        <AssociationConnector Association="StayLiveModel.FK_Tikcet_AssignedUser" ManuallyRouted="false" />
+        <AssociationConnector Association="StayLiveModel.FK_Tikcet_CreateByUser" ManuallyRouted="false" />
+        <AssociationConnector Association="StayLiveModel.FK_TicketReply_CreateByUser" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,103 @@
+﻿@model StayLive.areas.Tickets.Models.Ticket.TicketVM
+@{
+    ViewBag.Title = "Ticket";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Styles.Render("~/Content/tickets-style")
+@Scripts.Render("~/bundles/chat-helpers")
+@Scripts.Render("~/bundles/tickets-helpers")
+
+<div class="container-fluid">
+    <div class="row page-titles">
+        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+            @Html.Breadcrumb(new string[] { "Tickets", Model.Code }, new string[] { "../Ticket" })
+        </div>
+    </div>
+    @using (Html.BeginForm("Ticket", "Ticket", new { area = "Tickets" }, FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.HiddenFor(model => model.Id)
+        <div class="row">
+            <div class="col-12">
+                <div class="card m-b-0">
+                    <div class="chat-main-box">
+                        <div class="chat-right-aside">
+                            <div class="chat-main-header">
+                                <div class="p-10 b-b">
+                                    <h4 class="box-title">Ticket <small class="text-gray">@Model.Code</small>: @Model.Subject</h4>
+                                </div>
+                            </div>
+                            <div class="chat-rbox">
+                                <ul class="chat-list p-20">
+                                    @for (var index = 0; index < Model.Replies.Count; index++)
+                                    {
+                                        Html.RenderPartial("~/areas/Tickets/Views/Ticket/_message.cshtml", Model.Replies[index]);
+                                    }
+                                </ul>
+                            </div>
+                            <div class="card-body b-t p-t-10 p-l-10 p-b-10 p-r-10">
+                                <div class="row">
+                                    <div class="col-8">
+                                        @Html.TextAreaFor(model => model.Message, new { @placeholder = "Type your message here", @class = "form-control b-0" })
+                                    </div>
+                                    <div class="col-4 text-right">
+                                        <span class="badge badge-orange" id="AttachementName"></span>
+                                        <input type="file" name="Attachment" id="Attachment" onchange="TicketsHelper.CheckAttachementInput()"/>
+                                        <label class="btn btn-info btn-circle btn-lg" for="Attachment" style="margin-top:7px;padding-top:12px"><i class="fa fa-chain"></i></label>
+                                        <button type="submit" class="btn btn-primary btn-circle btn-lg p-0"><i class="mdi mdi-send"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="m-t-20 chat-left-aside" style="padding-left:5px;padding-right:5px">
+                            <div class="m-b-10">
+                                <span>@StayLive.Resources.Tickets.Status :</span>
+                                <span class="badge badge-info m-l-10 @Model.TicketStatus">@Model.TicketStatus</span>
+                                <div class="show-hd pull-right m-r-10" style="margin-top:-10px">
+                                    <span class="text-info"><i class="mdi mdi-information fa-2x"></i></span>
+                                </div>
+                            </div>
+                            <div class="hidden-hd">
+                                <div class="m-b-10 m-t-30">
+                                    <span class="m-l-10">@StayLive.Resources.Tickets.CreateDate :</span><br />
+                                    <span class="m-l-20"><strong>@Model.CreatedDate</strong></span>
+                                </div>
+                                <div class="m-b-30">
+                                    <span class="m-l-10">@StayLive.Resources.Tickets.LastUpdate :</span><br />
+                                    <span class="m-l-20"><strong>@Model.CreatedDate</strong></span>
+                                </div>
+                                <div class="m-b-10">
+                                    <span class="m-l-10">@StayLive.Resources.Tickets.AssignedTo :</span><br />
+                                    <span class="m-l-20"><strong>@Model.AssignedTo</strong></span>
+                                </div>
+                                <div class="m-b-30">
+                                    <span class="m-l-10">@StayLive.Resources.Tickets.RequestedBy :</span><br />
+                                    <span class="m-l-20">@Model.UserName (<small class="text-success">@Model.UserEmail</small>)</span>
+                                </div>
+                            </div>
+
+                            <div class="m-t-20">
+                                <div class="floating-labels">
+                                    <div class="form-group">
+                                        @Html.DropDownListFor(model => model.AssignedToValue, Model.UsersList, new { @Id = "ddlAssignedTo", @class = "form-control p-0" })
+                                        <span class="bar"></span>
+                                        <label for="ddlAssignedTo">@StayLive.Resources.Tickets.AssignedTo</label>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.DropDownListFor(model => model.TicketStatusValue, Model.TicketStatusList, new { @Id = "ddlMarkAs", @class = "form-control p-0" })
+                                        <span class="bar"></span>
+                                        <label for="ddlMarkAs">@StayLive.Resources.Tickets.MarkAs</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pull-right p-r-20" data-toggle="tooltip" title="@StayLive.Resources.Tickets.IsInternallInfo">
+                                @Html.CheckBoxFor(model => model.isInternall, new { @class = "js-switch", @Id = "chkIsInternall", data_color = "#232F3E", data_secondary_color = "#FF2B52", data_size = "small" })
+                                <label for="chkIsInternall">@StayLive.Resources.Tickets.IsInternall</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
